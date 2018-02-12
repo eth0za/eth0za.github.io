@@ -20,12 +20,15 @@
 			</div>
 		</div>
 
-		<div class="row">
+		
+
+		
+<div class="row">
 			<div class="col-xs-4">
 
 				<label for="inputdefault">Tile Lenght</label>
 				<div class="input-group">
-					<input type="number" class="form-control" id="TileLenght" placeholder="eg 200">
+					<input type="number" class="form-control" id="TileLenght" placeholder="eg 200" required>
 					<span class="input-group-addon">mm</span>
 				</div>
 
@@ -82,8 +85,10 @@
 					<span class="input-group-addon">kg</span>
 				</div>
 			</div>
-		</div>
 
+</div>
+
+		
 		<div class="row">
 			<br />
 		</div>
@@ -92,7 +97,7 @@
 
 
 			<div class="col-xs-2">
-				<button onclick="calc();" type="button" id="calculate" class="btn btn-primary" style="width:100%" data-toggle="collapse" data-target="#Results">Calculate</button>
+				<button onclick="calc();" type="submit" id="calculate" class="btn btn-primary" style="width:100%" data-toggle="collapse" data-target="#Results">Calculate</button>
 			</div>
 
 			<div class="col-xs-5">
@@ -133,6 +138,7 @@
 								<input type="text" class="form-control" id="TotalBagsRequired" placeholder="5">
 								<span class="input-group-addon">Bags</span>
 							</div>
+							<small class="form-text text-muted"> Rounded up based on the bag size specified above</small>
 						</div>
 					</div>
 					<div class="row">
@@ -169,6 +175,24 @@
 	<script>
 	
 		var _0x5815=['ceil','TotalBagsRequired','value','Tilethickness','getElementById','JointWidth','AreaToTile','BagSize','TotalRequired','toFixed'];(function(_0x4b62ae,_0xb12aa9){var _0x1a5c92=function(_0x36c83f){while(--_0x36c83f){_0x4b62ae['push'](_0x4b62ae['shift']());}};_0x1a5c92(++_0xb12aa9);}(_0x5815,0x174));var _0x3ac5=function(_0x231fd0,_0x4f680a){_0x231fd0=_0x231fd0-0x0;var _0x5b4826=_0x5815[_0x231fd0];return _0x5b4826;};function calc(){var _0x59850e=parseFloat(document['getElementById']('TileLenght')[_0x3ac5('0x0')]);var _0x48099d=parseFloat(document['getElementById']('TileWidth')['value']);var _0x36ad85=parseFloat(document['getElementById'](_0x3ac5('0x1'))[_0x3ac5('0x0')]);var _0xc2344=parseFloat(document[_0x3ac5('0x2')](_0x3ac5('0x3'))[_0x3ac5('0x0')]);var _0x48679b=parseFloat(document[_0x3ac5('0x2')](_0x3ac5('0x4'))['value']);var _0x12998e=parseFloat(document[_0x3ac5('0x2')]('SG')[_0x3ac5('0x0')]);var _0x272156=parseFloat(document[_0x3ac5('0x2')]('WasteAge')[_0x3ac5('0x0')])/0x64;var _0x42d26a=parseFloat(document['getElementById'](_0x3ac5('0x5'))[_0x3ac5('0x0')]);var _0x5f50e8=_0x59850e+_0x48099d;var _0x35dd41=_0x59850e*_0x48099d;var _0x1c81f7=_0x5f50e8*_0x36ad85;var _0x13922c=_0x1c81f7*_0xc2344;var _0x33f284=_0x13922c*_0x12998e;var _0x4a8961=_0x33f284/_0x35dd41;var _0x89aa12=_0x4a8961*_0x272156+_0x4a8961;document[_0x3ac5('0x2')]('GroutRequired')[_0x3ac5('0x0')]=_0x89aa12['toFixed'](0x2);var _0x2d3c91=_0x48679b*_0x4a8961;var _0x8c7b80=_0x272156*_0x2d3c91+_0x2d3c91;document[_0x3ac5('0x2')](_0x3ac5('0x6'))[_0x3ac5('0x0')]=_0x8c7b80[_0x3ac5('0x7')](0x2);var _0xc4dde8=Math[_0x3ac5('0x8')](_0x8c7b80/_0x42d26a);document[_0x3ac5('0x2')](_0x3ac5('0x9'))[_0x3ac5('0x0')]=_0xc4dde8;}
+	
+	(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
 	
 	</script>
 	
