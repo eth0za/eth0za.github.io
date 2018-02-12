@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Grout Calculator</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+<body id="home">
+
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-xs-12">
+				<h1>Grout Calculator</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4">
+
+				<label for="inputdefault">Tile Lenght</label>
+				<div class="input-group">
+					<input type="number" class="form-control" id="TileLenght" placeholder="eg 200">
+					<span class="input-group-addon">mm</span>
+				</div>
+
+
+				<br />
+				<label for="inputdefault">Tile Width</label>
+				<div class="input-group">
+					<input type="number" class="form-control" id="TileWidth" placeholder="eg 200">
+					<span class="input-group-addon">mm</span>
+				</div>
+
+				<br />
+				<label for="inputdefault">Tile Thickness</label>
+				<div class="input-group">
+					<input type="number" class="form-control" id="Tilethickness" placeholder="eg 3">
+					<span class="input-group-addon">mm</span>
+				</div>
+			</div>
+
+			<div class="col-xs-4">
+				<label for="inputdefault">Grout Joint Width</label>
+				<div class="input-group">
+					<input type="number" class="form-control" id="JointWidth" placeholder="eg 2">
+					<span class="input-group-addon">mm</span>
+				</div>
+
+				<br />
+				<label for="inputdefault">Total Area To Tile</label>
+				<div class="input-group">
+					<input type="number" class="form-control" id="AreaToTile" placeholder="eg 50">
+					<span class="input-group-addon">m<sup>2</sup></span>
+				</div>
+
+				<br />
+				<label for="inputdefault">Standard Gravity</label><small class="form-text text-muted"> Always 1.8g</small>
+				<div class="input-group">
+					<input type="number" class="form-control" id="SG" value="1.80">
+					<span class="input-group-addon">g</span>
+				</div>
+			</div>
+
+			<div class="col-xs-4">
+
+				<label for="inputdefault">Wastege</label><small class="form-text text-muted"> 10% is a safe average to use</small>
+				<div class="input-group">
+					<input type="number" class="form-control" id="WasteAge" value="10">
+					<span class="input-group-addon">%</span>
+				</div>
+
+				<br />
+				<label for="inputdefault">Bag Size</label>
+				<div class="input-group">
+					<input type="number" class="form-control" id="BagSize" value="5">
+					<span class="input-group-addon">kg</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<br />
+		</div>
+
+		<div class="row">
+
+
+			<div class="col-xs-2">
+				<button onclick="calc();" type="button" id="calculate" class="btn btn-primary" style="width:100%" data-toggle="collapse" data-target="#Results">Calculate</button>
+			</div>
+
+			<div class="col-xs-5">
+			</div>
+		</div>
+
+		<div class="row">
+			<br />
+		</div>
+
+
+	</div>
+	<div id="Results" class="collapse">
+
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading">Results</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-4">
+
+
+							<label for="inputdefault">Grout Required Per Square Meter</label><small class="form-text text-muted"></small>
+							<div class="input-group">
+								<input class="form-control" id="GroutRequired" type="text" data-format="0.00" value="0">
+								<span class="input-group-addon">kg per m<sup>2</sup></span>
+							</div>
+
+							<br />
+							<label for="inputdefault">Total Grout Required</label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="TotalRequired" placeholder="5">
+								<span class="input-group-addon">kg</span>
+							</div>
+							<br />
+							<label for="inputdefault">Total Bags Required</label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="TotalBagsRequired" placeholder="5">
+								<span class="input-group-addon">Bags</span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<br />
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="alert alert-info">
+								<strong>Info!</strong> This calculator should be used as an indication only, the actual grout used is influenced by the wasteage and the quality of the work. Please keep this in mind.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<br />
+		</div>
+		<div class="row">
+
+			<div class="col-xs-12">
+
+				<medium>
+					Copyright
+					<script>document.write(new Date().getFullYear())</script> Darick Internaltional&#0153 <br />All Rights Reserved.
+				</medium>
+			</div>
+		</div>
+	</div>
+
+	<script>
+	
+		var _0x5815=['ceil','TotalBagsRequired','value','Tilethickness','getElementById','JointWidth','AreaToTile','BagSize','TotalRequired','toFixed'];(function(_0x4b62ae,_0xb12aa9){var _0x1a5c92=function(_0x36c83f){while(--_0x36c83f){_0x4b62ae['push'](_0x4b62ae['shift']());}};_0x1a5c92(++_0xb12aa9);}(_0x5815,0x174));var _0x3ac5=function(_0x231fd0,_0x4f680a){_0x231fd0=_0x231fd0-0x0;var _0x5b4826=_0x5815[_0x231fd0];return _0x5b4826;};function calc(){var _0x59850e=parseFloat(document['getElementById']('TileLenght')[_0x3ac5('0x0')]);var _0x48099d=parseFloat(document['getElementById']('TileWidth')['value']);var _0x36ad85=parseFloat(document['getElementById'](_0x3ac5('0x1'))[_0x3ac5('0x0')]);var _0xc2344=parseFloat(document[_0x3ac5('0x2')](_0x3ac5('0x3'))[_0x3ac5('0x0')]);var _0x48679b=parseFloat(document[_0x3ac5('0x2')](_0x3ac5('0x4'))['value']);var _0x12998e=parseFloat(document[_0x3ac5('0x2')]('SG')[_0x3ac5('0x0')]);var _0x272156=parseFloat(document[_0x3ac5('0x2')]('WasteAge')[_0x3ac5('0x0')])/0x64;var _0x42d26a=parseFloat(document['getElementById'](_0x3ac5('0x5'))[_0x3ac5('0x0')]);var _0x5f50e8=_0x59850e+_0x48099d;var _0x35dd41=_0x59850e*_0x48099d;var _0x1c81f7=_0x5f50e8*_0x36ad85;var _0x13922c=_0x1c81f7*_0xc2344;var _0x33f284=_0x13922c*_0x12998e;var _0x4a8961=_0x33f284/_0x35dd41;var _0x89aa12=_0x4a8961*_0x272156+_0x4a8961;document[_0x3ac5('0x2')]('GroutRequired')[_0x3ac5('0x0')]=_0x89aa12['toFixed'](0x2);var _0x2d3c91=_0x48679b*_0x4a8961;var _0x8c7b80=_0x272156*_0x2d3c91+_0x2d3c91;document[_0x3ac5('0x2')](_0x3ac5('0x6'))[_0x3ac5('0x0')]=_0x8c7b80[_0x3ac5('0x7')](0x2);var _0xc4dde8=Math[_0x3ac5('0x8')](_0x8c7b80/_0x42d26a);document[_0x3ac5('0x2')](_0x3ac5('0x9'))[_0x3ac5('0x0')]=_0xc4dde8;}
+	
+	</script>
+	
+</body>
+</html>
